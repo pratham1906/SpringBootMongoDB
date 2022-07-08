@@ -1,5 +1,10 @@
 package com.mongo.repository;
 
-public interface EmployeeRepository {
+import org.springframework.data.mongodb.repository.MongoRepository;
 
+import com.mongo.Model.Employee;
+
+public interface EmployeeRepository extends MongoRepository<Employee,Integer>{
+
+	
 }
