@@ -12,13 +12,13 @@ import com.mongo.service.EmployeeService;
 
 @RestController
 public class EmployeeController {
-
 	@Autowired
 	private EmployeeService employeeService;
 	
 	
-	@PostMapping
+	@PostMapping("/e")
 	public ResponseEntity<Employee> saveOrUpdate(@RequestBody Employee emp){
-		return new ResponseEntity<>(employeeService.saveOrUpdate(emp),HttpStatus.ACCEPTED);
+		System.out.println(emp.getName());
+		return new ResponseEntity<Employee>(employeeService.saveOrUpdate(emp),HttpStatus.ACCEPTED);
 	}
 }
